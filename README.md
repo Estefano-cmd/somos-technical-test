@@ -1,27 +1,36 @@
-# SomosPizzeria
+🍕 SomosPizzeria
+Aplicación web desarrollada con Angular CLI versión 15.0.3, como parte de una prueba técnica para una pizzería multiempresa.
+El sistema permite a los usuarios:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+Administrar pizzas (CRUD)
 
-## Development server
+Navegar y comprar productos (carrito de compras)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Configurar los datos desde Firebase o fuentes locales
 
-## Code scaffolding
+Soporta múltiples empresas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Usa Angular Material para una experiencia visual moderna y responsiva
 
-## Build
+🖼️ Vista previa
+Vista Cliente
+![image](https://github.com/user-attachments/assets/8cdf2e2e-6428-4170-9647-2653d2b9f778)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![image](https://github.com/user-attachments/assets/33b44158-66f0-4893-87dc-ab2ebc5d4695)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Carrito de Compras
+![image](https://github.com/user-attachments/assets/c23c7973-fa98-4bec-8fe8-c4ca4ca378fd)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Vista de administrador
+![image](https://github.com/user-attachments/assets/081af038-0e59-4cad-9d60-ced27e593cba)
 
-## Further help
+![image](https://github.com/user-attachments/assets/e429045f-0521-46a9-a1ab-14b3992d77dd)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://github.com/user-attachments/assets/043f6e58-0708-4d0d-9b2c-2b8fd7ed9d46)
+
+![image](https://github.com/user-attachments/assets/9a4dbb20-70e2-46a7-9f05-80f9e0fce716)
+
+
+📌 Nota: Las imágenes corresponden a una demo del sistema en funcionamiento.
