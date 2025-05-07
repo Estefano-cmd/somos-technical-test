@@ -1,0 +1,63 @@
+<div class="order-summary">
+  <h2 class="summary-title">Resumen del Pedido</h2>
+
+  <mat-list class="order-list">
+    <mat-list-item *ngFor="let item of items" class="order-item">
+      <div class="item-container">
+        <img
+          [src]="item.pizza.imageUrl"
+          alt="{{ item.pizza.name }}"
+          class="pizza-thumbnail"
+        />
+
+        <div class="item-details">
+          <h4 class="pizza-name">{{ item.pizza.name }}</h4>
+
+          <div class="quantity-control">
+            <span class="quantity-label">Cantidad:</span>
+
+            <button
+              mat-icon-button
+              class="quantity-btn decrease"
+              (click)="removeFromCart(item.pizza)"
+              aria-label="Reducir cantidad"
+            >
+              <mat-icon>remove</mat-icon>
+            </button>
+
+            <span class="quantity-value">{{ item.quantity }}</span>
+
+            <button
+              mat-icon-button
+              class="quantity-btn increase"
+              (click)="addToCart(item.pizza)"
+              aria-label="Aumentar cantidad"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Precio unitario:</span>
+            <span class="detail-value"
+              >${{ item.pizza.price | number : "1.2-2" }}</span
+            >
+          </div>
+
+          <div class="detail-row subtotal">
+            <span class="detail-label">Subtotal:</span>
+            <span class="detail-value"
+              >${{ item.quantity * item.pizza.price | number : "1.2-2" }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-divider class="summary-divider"></mat-divider>
+
+  <div class="total-section">
+    <h3 class="total-amount">Total: ${{ getTotal() | number : "1.2-2" }}</h3>
+  </div>
+</div>

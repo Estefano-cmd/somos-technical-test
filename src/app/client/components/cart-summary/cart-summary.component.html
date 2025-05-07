@@ -1,0 +1,9 @@
+<mat-card class="cart-summary">
+  <mat-card-content>
+    <p><strong>Total de pizzas:</strong> {{ totalQuantity }}</p>
+    <p><strong>Costo total:</strong> ${{ totalPrice }}</p>
+  </mat-card-content>
+  <a mat-raised-button color="accent" [routerLink]="['/client/detalle']">
+    Ver detalle del pedido
+  </a>
+</mat-card>

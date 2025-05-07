@@ -1,0 +1,23 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h2>
+      <mat-icon>restaurant_menu</mat-icon>
+      Selecciona tu Pizza
+    </h2>
+  </div>
+
+  <div class="pizza-list">
+    <app-card
+      *ngFor="let pizza of pizzas"
+      [pizza]="pizza"
+      [mode]="'client'"
+      [quantity]="getQuantity(pizza)"
+      (onAddToCart)="addToCart(pizza)"
+      (onRemoveFromCart)="removeFromCart(pizza)"
+    >
+    </app-card>
+  </div>
+
+  <app-cart-summary [totalQuantity]="totalQuantity" [totalPrice]="totalPrice">
+  </app-cart-summary>
+</div>

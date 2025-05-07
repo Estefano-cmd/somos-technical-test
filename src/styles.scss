@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-dialog-container {
+  .mat-form-field {
+    width: 100%;
+
+    &-prefix {
+      .mat-icon {
+        color: rgba(0, 0, 0, 0.54);
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .mat-dialog-actions {
+    padding: 16px 0 !important;
+  }
+}

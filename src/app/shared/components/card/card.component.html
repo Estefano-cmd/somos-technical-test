@@ -1,0 +1,36 @@
+<mat-card class="pizza-card">
+  <img mat-card-image [src]="pizza.imageUrl" alt="{{ pizza.name }}" />
+  <mat-card-title>{{ pizza.name }}</mat-card-title>
+  <mat-card-subtitle>{{ pizza.descriptor }}</mat-card-subtitle>
+  <mat-card-content>
+    <p><strong>Precio:</strong> ${{ pizza.price | number }}</p>
+  </mat-card-content>
+
+  <mat-card-actions
+    [class.admin-actions]="mode === 'admin'"
+    [class.client-actions]="mode === 'client'"
+  >
+    <ng-container *ngIf="mode === 'admin'">
+      <button mat-raised-button color="accent" (click)="onEdit.emit(pizza)">
+        <mat-icon>edit</mat-icon> Editar
+      </button>
+      <button mat-raised-button color="warn" (click)="onDelete.emit(pizza)">
+        <mat-icon>delete</mat-icon> Eliminar
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="mode === 'client'">
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="onRemoveFromCart.emit(pizza)"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+      <span>{{ quantity }}</span>
+      <button mat-icon-button color="primary" (click)="onAddToCart.emit(pizza)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </ng-container>
+  </mat-card-actions>
+</mat-card>

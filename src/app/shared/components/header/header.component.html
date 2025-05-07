@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="custom-toolbar">
+  <div class="toolbar-content">
+    <div class="brand-section">
+      <mat-icon class="brand-icon">local_pizza</mat-icon>
+      <span class="brand-title">Pizzería SOMMOS</span>
+    </div>
+
+    <div class="user-section">
+      <ng-container *ngIf="user$ | async as user; else guest">
+        <span class="user-info">
+          <mat-icon class="user-icon">account_circle</mat-icon>
+          <span class="user-email">{{ user.email }}</span>
+        </span>
+        <button
+          mat-stroked-button
+          color="accent"
+          (click)="logout()"
+          class="logout-btn"
+        >
+          <mat-icon>exit_to_app</mat-icon>
+          <span class="logout-text">Salir</span>
+        </button>
+      </ng-container>
+
+      <ng-template #guest>
+        <button
+          mat-stroked-button
+          color="accent"
+          (click)="login()"
+          class="login-btn"
+        >
+          <mat-icon>login</mat-icon>
+          <span>Ingresar</span>
+        </button>
+      </ng-template>
+    </div>
+
+    <div class="cart-section" *ngIf="totalQuantity > 0">
+      <button
+        mat-icon-button
+        class="cart-button"
+        [matBadge]="totalQuantity"
+        matBadgeColor="accent"
+        (click)="navigateToCart()"
+        aria-label="Ver carrito"
+      >
+        <mat-icon class="cart-icon">shopping_cart</mat-icon>
+        <span class="total-price">{{ totalPrice | currency }}</span>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
